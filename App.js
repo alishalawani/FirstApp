@@ -10,7 +10,7 @@ export default function App() {
 
 	return (
 		<SafeAreaView style={styles.container}>
-			<Button color='orange' title='Click Me' onPress={()=>{Alert.alert('Button Tapped')}}/>
+			<Button color='orange' title='Click Me' onPress={()=>{Alert.alert('My Title', 'My Message', [{text: 'Yes', onPress: () => {console.log('YES')}}, {text: 'No', onPress: ()=>{console.log('NO')}}])}}/>
 		</SafeAreaView>
 	);
 }
