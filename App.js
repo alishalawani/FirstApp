@@ -7,34 +7,30 @@ import {
 	Button,
 	Alert,
 	Platform,
-	StatusBar,
+  StatusBar,
+  Dimensions
 } from 'react-native';
+import {useDimensions, useDeviceOrientation} from '@react-native-community/hooks';
 
 export default function App() {
-	const handlePress = () => {
-		console.log('Text Pressed');
-	};
+  const {landscape} = useDeviceOrientation()
+  console.log(useDimensions())
+
 	// console.log(require('./assets/icon.png')) //render local or static images
 
 	return (
 		<SafeAreaView style={styles.container}>
-			<Button
-				color='orange'
-				title='Click Me'
-				onPress={() => {
-					Alert.prompt('My Title', 'My Message', (text) => {
-						console.log(text);
-					});
-				}}
-			/>
+    <View style={{backgroundColor: 'dodgerblue', width:'100%', height: landscape ? '100%' : '30%'}}>
+
+    </View>
 		</SafeAreaView>
 	);
 }
 
 const styles = StyleSheet.create({
 	container: {
-		flex: 1,
+    flex:1,
 		backgroundColor: 'white',
-		paddingTop: Platform.OS === 'android' ? 20 : 0,
+		paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
 	},
 });
