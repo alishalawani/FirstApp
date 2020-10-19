@@ -9,11 +9,13 @@ export default function App() {
 	// console.log(require('./assets/icon.png')) //render local or static images
 
 	return (
-		<SafeAreaView style={styles.container}>
-			<Button color='orange' title='Click Me' onPress={()=>{Alert.prompt('My Title', 'My Message', (text)=>{console.log(text)})}}/>
+		<SafeAreaView style={[styles.container, containerStyle]}>
+			<Button color='white' title='Click Me' onPress={()=>{Alert.prompt('My Title', 'My Message', (text)=>{console.log(text)})}}/>
 		</SafeAreaView>
 	);
 }
+
+const containerStyle = { backgroundColor: 'orange'};
 
 const styles = StyleSheet.create({
 	container: {
