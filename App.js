@@ -1,6 +1,14 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View, SafeAreaView, Button, Alert } from 'react-native';
+import {
+	StyleSheet,
+	Text,
+	View,
+	SafeAreaView,
+	Button,
+	Alert,
+	Platform,
+	StatusBar,
+} from 'react-native';
 
 export default function App() {
 	const handlePress = () => {
@@ -9,19 +17,24 @@ export default function App() {
 	// console.log(require('./assets/icon.png')) //render local or static images
 
 	return (
-		<SafeAreaView style={[styles.container, containerStyle]}>
-			<Button color='white' title='Click Me' onPress={()=>{Alert.prompt('My Title', 'My Message', (text)=>{console.log(text)})}}/>
+		<SafeAreaView style={styles.container}>
+			<Button
+				color='orange'
+				title='Click Me'
+				onPress={() => {
+					Alert.prompt('My Title', 'My Message', (text) => {
+						console.log(text);
+					});
+				}}
+			/>
 		</SafeAreaView>
 	);
 }
-
-const containerStyle = { backgroundColor: 'orange'};
 
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
 		backgroundColor: 'white',
-		justifyContent: 'center', //vertically
-		alignItems: 'center', //horizontally
+		paddingTop: Platform.OS === 'android' ? 20 : 0,
 	},
 });
