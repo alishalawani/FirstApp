@@ -9,13 +9,14 @@ export default function App() {
 				flex: 1,
 				flexDirection: 'row',
 				justifyContent: 'center',
-        alignItems: 'stretch',
-        flexWrap: 'wrap'
+				alignItems: 'center',
+        
 			}}>
 			<View
 				style={{
 					backgroundColor: 'dodgerblue',
-					width: 100,
+					width: 400,
+					flexShrink:1,
 					height: 100,
 				}}
 			/>
