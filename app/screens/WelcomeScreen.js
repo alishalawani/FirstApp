@@ -1,7 +1,7 @@
 import React from 'react';
-import { Image, ImageBackground, StyleSheet, Text, View } from 'react-native';
+import { Image, ImageBackground, StyleSheet, Text, View, Button } from 'react-native';
 
-function WelcomeScreen(props) {
+function WelcomeScreen({navigation}) {
 	return (
 		<ImageBackground
 			style={styles.background}
@@ -11,7 +11,12 @@ function WelcomeScreen(props) {
 				<Text style={styles.text}>Google is your best friend</Text>
 			</View>
 
-			<View style={styles.loginButton} />
+			<View
+				style={styles.loginButton}
+				onStartShouldSetResponder={() =>
+					navigation.navigate('Image', { name: 'Alisha' })
+				}
+			/>
 			<View style={styles.registerButton} />
 		</ImageBackground>
 	);
